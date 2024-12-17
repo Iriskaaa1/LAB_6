@@ -1,0 +1,209 @@
+css
+/*1 задание */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 10px;
+    color: white;
+    position: relative;
+    margin: 5px 0;
+}
+
+li:first-child {
+    background: linear-gradient(135deg, #ff6b6b, #ffb6b9);
+}
+
+li:last-child {
+    background: linear-gradient(135deg, #6b6bff, #b6b9ff);
+}
+
+li:nth-child(2) {
+    background: linear-gradient(135deg, #ff8c42, #ffdd94);
+}
+
+li:nth-child(3) {
+    background: linear-gradient(135deg, #6bd4ff, #b9efff);
+}
+
+li:nth-child(4) {
+    background: linear-gradient(135deg, #9a6bff, #dfb6ff);
+}
+
+li:nth-child(5) {
+    background: linear-gradient(135deg, #6bffa3, #b6ffc2);
+}
+
+li:nth-child(6) {
+    background: linear-gradient(135deg, #ffa66b, #ffddb6);
+}
+
+li:nth-child(7) {
+    background: linear-gradient(135deg, #ff6bcf, #ffb6e0);
+}
+
+li:nth-child(8) {
+    background: linear-gradient(135deg, #6bffa8, #b6ffec);
+}
+
+li:nth-child(9) {
+    background: linear-gradient(135deg, #a86bff, #d7b6ff);
+}
+
+li:nth-child(3)::before, 
+li:nth-child(5)::before {
+    content: '>> ';
+    color: #fff;
+    position: absolute;
+    left: -25px;
+}
+
+li:nth-child(3)::after, 
+li:nth-child(5)::after {
+    content: ' <<';
+    color: #fff;
+}
+
+li:first-letter {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+}
+
+/*2  задание кнопки */
+:root {
+    --initial-font-size: 16px;
+    --hover-font-size: 20px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    margin: 10px;
+    cursor: pointer;
+    font-size: var(--initial-font-size);
+    transition: all 0.3s ease;
+    font-family: Arial, sans-serif;
+}
+
+.color-change {
+    background-color: #3498db;
+    color: white;
+}
+
+.color-change:hover {
+    background-color: #2ecc71;
+    font-size: var(--hover-font-size);
+}
+
+.size-change {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.size-change:hover {
+    transform: scale(1.2);
+    font-size: var(--hover-font-size);
+}
+
+.position-change {
+    background-color: #f39c12;
+    color: white;
+}
+
+.position-change:hover {
+    transform: translateX(20px);
+    font-size: var(--hover-font-size);
+}
+
+/*3 задание меню */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.menu-container {
+    position: relative;
+    display: inline-block;
+}
+
+.menu-item {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.dropdown-menu {
+    display: none; /* Скрыто по умолчанию */
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    width: max-content;
+}
+
+.menu-container:hover .dropdown-menu {
+    display: block; 
+}
+
+.dropdown-menu li {
+    padding: 10px 20px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.dropdown-menu li:hover {
+    background-color: #ddd;
+}
+/*4 задание квадрат с анимацией */
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+
+.animated-square {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    animation: moveAnimation 10s linear infinite, colorAnimation 5s ease-in-out infinite alternate, shapeAnimation 5s ease-in-out infinite alternate;
+}
+
+@keyframes moveAnimation {
+    0% { top: 0; left: 0; }
+    25% { top: 0; left: calc(100% - 50px); }
+    50% { top: calc(100% - 50px); left: calc(100% - 50px); }
+    75% { top: calc(100% - 50px); left: 0; }
+    100% { top: 0; left: 0; }
+}
+
+@keyframes colorAnimation {
+    0% { background-color: red; }
+    100% { background-color: blue; }
+}
+
+@keyframes shapeAnimation {
+    0% { border-radius: 0%; }
+    100% { border-radius: 50%; }
+}
